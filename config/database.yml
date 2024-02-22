@@ -21,5 +21,8 @@ test:
   database: storage/test.sqlite3
 
 production:
-  <<: *default
-  database: storage/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  # For details on configuring, see: https://devcenter.heroku.com/articles/heroku-postgresql
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
