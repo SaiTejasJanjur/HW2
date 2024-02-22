@@ -8,6 +8,11 @@ gem "rails", "~> 7.1.3"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+
+group :production do
+  gem 'pg' # for Heroku deployment
+end
+
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
@@ -69,6 +74,3 @@ group :test do
   gem "selenium-webdriver"
 end
 
-group :production do
-  gem 'pg' # for Heroku deployment
-end
